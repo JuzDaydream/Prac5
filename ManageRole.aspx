@@ -24,11 +24,14 @@
             <asp:Button ID="btnAssignRole" runat="server" OnClick="btnAssignRole_Click" Text="Assign Role" />
             <br />
             <br />
-            <asp:Button ID="btnGetUser" runat="server" Text="Get User" />
+            <asp:DropDownList runat="server" ID="ddlRole"></asp:DropDownList>
+            <br />
+            <br />
+            <asp:Button ID="btnGetUser" runat="server" Text="Get User" OnClick="btnGetUser_Click" />
             <br />
             <br />
             Role-User List<br />
-            <asp:ListBox ID="listRoleUser" runat="server"></asp:ListBox>
+            <asp:ListBox ID="lstRoleUser" runat="server"></asp:ListBox>
         </div>
     </form>
 </body>

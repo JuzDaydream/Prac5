@@ -16,12 +16,14 @@ namespace Prac5.Maintenance
             if (!IsPostBack)
             {
                 //Bind Role to ListView
-                rolesArray = Roles.GetAllRoles();
-                lstRoles.DataSource = rolesArray;
+                lstRoles.DataSource = Roles.GetAllRoles();
                 lstRoles.DataBind();
 
                 lstUsers.DataSource = Membership.GetAllUsers();
                 lstUsers.DataBind();
+
+                ddlRole.DataSource = Roles.GetAllRoles();
+                ddlRole.DataBind();
             }
         }
 
@@ -43,6 +45,9 @@ namespace Prac5.Maintenance
                     //REFRESH ROLE LIST
                     lstRoles.DataSource = Roles.GetAllRoles();
                     lstRoles.DataBind();
+
+                    ddlRole.DataSource = Roles.GetAllRoles();
+                    ddlRole.DataBind();
                 }
             }
             catch (Exception ex)
@@ -54,7 +59,15 @@ namespace Prac5.Maintenance
 
         protected void btnAssignRole_Click(object sender, EventArgs e)
         {
-            Roles.AddUserToRole(lstUsers.SelectedItem.Text,lstRoles.SelectedItem.Text);
+            Roles.AddUserToRole(lstUsers.SelectedItem.Text, lstRoles.SelectedItem.Text);
         }
+
+        protected void btnGetUser_Click(object sender, EventArgs e)
+        {
+            lstRoleUser.DataSource = Roles.GetUsersInRole(ddlRole.SelectedValue);
+            lstRoleUser.DataBind();
+        }
+
+
     }
 }
