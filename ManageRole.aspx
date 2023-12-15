@@ -15,11 +15,11 @@
             <br />
             <br />
             Role List:<br />
-            <asp:ListBox ID="lstRole" runat="server"></asp:ListBox>
+            <asp:ListBox ID="lstRoles" runat="server"></asp:ListBox>
             <br />
             <br />
             User List:<br />
-            <asp:ListBox ID="lstUser" runat="server"></asp:ListBox>
+            <asp:ListBox ID="lstUsers" runat="server"></asp:ListBox>
             <br />
             <asp:Button ID="btnAssignRole" runat="server" OnClick="btnAssignRole_Click" Text="Assign Role" />
             <br />

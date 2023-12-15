@@ -17,11 +17,11 @@ namespace Prac5.Maintenance
             {
                 //Bind Role to ListView
                 rolesArray = Roles.GetAllRoles();
-                lstRole.DataSource = rolesArray;
-                lstRole.DataBind();
+                lstRoles.DataSource = rolesArray;
+                lstRoles.DataBind();
 
-                lstUser.DataSource = Membership.GetAllUsers();
-                lstUser.DataBind();
+                lstUsers.DataSource = Membership.GetAllUsers();
+                lstUsers.DataBind();
             }
         }
 
@@ -41,8 +41,8 @@ namespace Prac5.Maintenance
                     //CREATE ROLE
                     Roles.CreateRole(rolename);
                     //REFRESH ROLE LIST
-                    lstRole.DataSource = Roles.GetAllRoles();
-                    lstRole.DataBind();
+                    lstRoles.DataSource = Roles.GetAllRoles();
+                    lstRoles.DataBind();
                 }
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace Prac5.Maintenance
 
         protected void btnAssignRole_Click(object sender, EventArgs e)
         {
-            Roles.AddUserToRole(lstUser.SelectedItem.Text,lstRole.SelectedItem.Text);
+            Roles.AddUserToRole(lstUsers.SelectedItem.Text,lstRoles.SelectedItem.Text);
         }
     }
 }
